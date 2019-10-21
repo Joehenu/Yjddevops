@@ -2,7 +2,7 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 set -e
 export cur_dir=`pwd`
-export git=https://gitee.com/yao_0100hn_admin/YjdDevOps/raw/master
+export git=https://raw.githubusercontent.com/Joehenu/Yjddevops/master
 export dingding='curl -s '$git'/tools/dingding.sh'
 
 # 系统部署
