@@ -9,6 +9,7 @@ branch2=java-test
 
 # 更新配置
 update_conf(){
+echo $java_conf_content
     if [ -d $java_conf_content ];then
         cd $java_conf_content
         git fetch --all  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
