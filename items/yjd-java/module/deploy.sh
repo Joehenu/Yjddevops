@@ -10,7 +10,6 @@ branch2=java-test
 
 # 更新配置
 update_conf(){
-echo $java_conf_content
     if [ -d $java_conf_content ];then
         cd $java_conf_content
         git fetch --all  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
@@ -38,7 +37,7 @@ maven_code(){
     local select=$1
     echo "=================开始进行编译====================="
     rm -rf $java_code_bak
-    cp -r  $java_code  $java_code_bak
+    cp -a $java_code  $java_code_bak
     cd $java_code_bak
     if [ $select == "1"] || [ $select == "2" ];then
         git checkout $branch1
