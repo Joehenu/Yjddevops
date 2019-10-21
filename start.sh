@@ -4,7 +4,6 @@ set -e
 export cur_dir=`pwd`
 export git=https://raw.githubusercontent.com/Joehenu/Yjddevops/master
 export dingding='curl -s '$git'/tools/dingding.sh'
-echo $cur_dir
 # 系统部署
 java_deploy(){
     local choose=$1
