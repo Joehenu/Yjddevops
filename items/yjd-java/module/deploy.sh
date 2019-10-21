@@ -15,7 +15,7 @@ echo $java_conf_content
         git fetch --all  || {  $dingding |sh -s 请注意：aaaa配置文件更新失败，程序退出！; exit 1; }
     else
         mkdir -p $java_conf_content
-        git clone $java_conf_git $java_conf_content || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
+        git clone $java_conf_git $java_conf_content || {  $dingding |sh -s bbbb请注意：配置文件更新失败，程序退出！; exit 1; }
     fi
 }
 
