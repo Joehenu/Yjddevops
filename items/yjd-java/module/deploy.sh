@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-java_conf_content=/opt/deploy/item/java/conf
+java_conf_content=/opt/java/conf
 java_conf_git=git@gitee.com:yijiedai-yunwei/Yjd_Java_Conf.git
 java_code_git=git@gitee.com:yijiedai-java/p-parent.git
 java_code=/opt/java/p-parent
@@ -11,11 +11,10 @@ branch2=java-test
 update_conf(){
 echo $java_conf_content
     if [ -d $java_conf_content ];then
-        cd $java_conf_content $dingding |sh -s 请注意：aaaa配置文
-        git fetch --all  || {  $dingding |sh -s 请注意：aaaa配置文件更新失败，程序退出！; exit 1; }
+        cd $java_conf_content
+        git fetch --all  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
     else
-echo $curl_dir
-        mkdir -p $java_conf_content $dingding |sh -s 请注意
+        mkdir -p $java_conf_content
         git clone $java_conf_git $java_conf_content || {  $dingding |sh -s bbbb请注意：配置文件更新失败，程序退出！; exit 1; }
     fi
 }
