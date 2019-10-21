@@ -4,6 +4,7 @@ java_conf_content=/opt/java/conf
 java_conf_git=git@gitee.com:yijiedai-yunwei/Yjd_Java_Conf.git
 java_code_git=git@gitee.com:yijiedai-java/p-parent.git
 java_code=/opt/java/p-parent
+java_code_bak=/opt/java/p-parent-bak
 branch1=master
 branch2=java-test
 
@@ -15,7 +16,7 @@ echo $java_conf_content
         git fetch --all  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
     else
         mkdir -p $java_conf_content
-        git clone $java_conf_git $java_conf_content || {  $dingding |sh -s bbbb请注意：配置文件更新失败，程序退出！; exit 1; }
+        git clone $java_conf_git $java_conf_content || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
     fi
 }
 
@@ -37,7 +38,7 @@ maven_code(){
     local select=$1
     echo "=================开始进行编译====================="
     rm -rf $java_code_bak
-    cp -r $java_code  $java_code_bak
+    cp -r  $java_code  $java_code_bak
     cd $java_code_bak
     if [ $select == "1"] || [ $select == "2" ];then
         git checkout $branch1
