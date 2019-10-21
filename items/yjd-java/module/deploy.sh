@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-java_conf_content=$cur_dir/item/java/conf
+java_conf_content=/opt/deploy/item/java/conf
 java_conf_git=git@gitee.com:yijiedai-yunwei/Yjd_Java_Conf.git
 java_code_git=git@gitee.com:yijiedai-java/p-parent.git
 java_code=/opt/java/p-parent
