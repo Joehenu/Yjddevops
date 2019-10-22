@@ -12,7 +12,7 @@ branch2=task_20191015
 update_conf(){
     if [ -d $java_conf_content ];then
         cd $java_conf_content
-        git fetch --all  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
+        git pull origin master:master  || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
     else
         mkdir -p $java_conf_content
         git clone $java_conf_git $java_conf_content || {  $dingding |sh -s 请注意：配置文件更新失败，程序退出！; exit 1; }
