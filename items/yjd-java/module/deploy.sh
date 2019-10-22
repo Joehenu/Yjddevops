@@ -39,7 +39,7 @@ maven_code(){
     rm -rf $java_code_bak
     cp -a $java_code  $java_code_bak
     cd $java_code_bak
-    if [ $select == "1"];then
+    if [ $select == "1" ];then
         git checkout $branch1
         #$dingding |sh -s aaaaa
         rm -rf  $java_code_bak/config/test.properties
