@@ -46,7 +46,7 @@ maven_code(){
     elif [ $select == "3" ] || [ $select == "4" ];then
         git checkout $branch2
         rm -rf  $java_code_bak/config/test.properties
-    #    cp -rf $java_conf_content/java-branch/test.properties  $java_code_bak/config/test.properties
+        cp -rf $java_conf_content/java-branch/test.properties  $java_code_bak/config/test.properties
     else
         $dingding | sh -s 编译时出错，切换分支失败！
     fi 
