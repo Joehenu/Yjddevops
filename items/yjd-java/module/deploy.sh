@@ -6,7 +6,7 @@ java_code_git=git@gitee.com:yijiedai-java/p-parent.git
 java_code=/opt/java/p-parent
 java_code_bak=/opt/java/p-parent-bak
 branch1=master
-branch2=java-test
+branch2=task_20191015
 
 # 更新配置
 update_conf(){
