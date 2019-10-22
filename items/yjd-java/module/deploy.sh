@@ -60,9 +60,9 @@ copy_code(){
     cd $java_code_bak
     for i in `cat $java_conf_content/uat/applyname.txt`
     do
-        if [ $select == "1"] || [ $select == "2" ];then
+        if [ $select == "1" ];then
             cp ./$i /www/p-java-common-uat/
-        elif [ $select == "3" ] || [ $select == "4" ];then
+        elif [ $select == "3" ];then
             cp ./$i /www/p-java-common-test/
         else
             $dingding | sh -s 复制jar包失败！
