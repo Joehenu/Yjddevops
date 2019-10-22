@@ -90,7 +90,7 @@ main_java(){
         maven_code $choose
         copy_code $choose
     elif [ $choose == "4" ];then
-        bash $java_conf_content/branch/updateapply.sh
+        bash $java_conf_content/java-branch/updateapply.sh
     else
         $dingding |sh -s 执行错误!
     fi
