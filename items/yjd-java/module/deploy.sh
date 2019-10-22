@@ -42,7 +42,7 @@ maven_code(){
     if [ $select == "1"] || [ $select == "2" ];then
         git checkout $branch1
         rm -rf  $java_code_bak/config/test.properties
-        cp -rf $java_conf_content/uat/test.properties  $java_code_bak/config/test.properties
+    #    cp -rf $java_conf_content/uat/test.properties  $java_code_bak/config/test.properties
     elif [ $select == "3" ] || [ $select == "4" ];then
         git checkout $branch2
         rm -rf  $java_code_bak/config/test.properties
