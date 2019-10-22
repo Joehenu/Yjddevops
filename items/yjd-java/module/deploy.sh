@@ -41,9 +41,7 @@ maven_code(){
     cd $java_code_bak
     if [ $select == "1" ];then
         git checkout $branch1
-        $dingding |sh -s aaaaa
         rm -rf  $java_code_bak/config/test.properties
-        $dingding |sh -s bbbbb
         cp -rf $java_conf_content/uat/test.properties  $java_code_bak/config/test.properties
     elif [ $select == "3" ];then
         git checkout $branch2
@@ -78,27 +76,20 @@ copy_code(){
 main_java(){
     local choose=$1
     if [ $choose == "1" ];then
-        $dingding |sh -s 请悉知：开始更新代码...
+        $dingding |sh -s 请悉知：开始更新master代码...
         update_conf;
         update_code;
         maven_code $choose
         copy_code $choose
     elif [ $choose == "2" ];then
-        update_conf;
-        update_code;
-        maven_code $choose
-        copy_code $choose
         bash $java_conf_content/uat/updateapply.sh
     elif [ $choose == "3" ];then
+        $dingding |sh -s 请悉知：开始更新分支代码...
         update_conf;
         update_code;
         maven_code $choose
         copy_code $choose
     elif [ $choose == "4" ];then
-        update_conf;
-        update_code;
-        maven_code $choose
-        copy_code $choose
         bash $java_conf_content/branch/updateapply.sh
     else
         $dingding |sh -s 执行错误!
