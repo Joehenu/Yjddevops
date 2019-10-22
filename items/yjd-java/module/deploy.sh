@@ -41,10 +41,10 @@ maven_code(){
     cd $java_code_bak
     if [ $select == "1" ];then
         git checkout $branch1
-        #$dingding |sh -s aaaaa
+        $dingding |sh -s aaaaa
         rm -rf  $java_code_bak/config/test.properties
-        #$dingding |sh -s bbbbb
-    #    cp -rf $java_conf_content/uat/test.properties  $java_code_bak/config/test.properties
+        $dingding |sh -s bbbbb
+        cp -rf $java_conf_content/uat/test.properties  $java_code_bak/config/test.properties
     elif [ $select == "3" ];then
         git checkout $branch2
         rm -rf  $java_code_bak/config/test.properties
