@@ -77,6 +77,7 @@ copy_code(){
         
     done || { echo 'jar包复制失败'; $dingding |sh -s 请注意：jar包复制失败，程序退出！; exit 1; }
     $dingding |sh -s   请悉知：jar包复制成功！
+    echo "############jar包复制完成############"
 }
 
 # 主函数
