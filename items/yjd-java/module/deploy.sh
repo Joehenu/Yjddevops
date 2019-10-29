@@ -57,6 +57,7 @@ maven_code(){
 # 复制jar包
 copy_code(){
     local select=$1
+    echo "############正在复制jar包###########"
     cd $java_code_bak
     for i in `cat $java_conf_content/uat/applyname.txt`
     do
