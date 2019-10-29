@@ -51,7 +51,8 @@ maven_code(){
         $dingding | sh -s 编译时出错，切换分支失败！
     fi 
     sed -i "s:/code/IdeaProjects/p-parent:$java_code_bak:" $java_code_bak/pom.xml
-    /opt/apache-maven-3.6.1/bin/mvn clean install -Dmaven.test.skip=true -P test  || { echo "编译失败，退出程序"; $dingding |sh -s 请注意：maven编译失败,程序退出！; exit 1; }  
+    /opt/apache-maven-3.6.1/bin/mvn clean install -Dmaven.test.skip=true -P test  || { echo "编译失败，退出程序"; $dingding |sh -s 请注意：maven编译失败,程序退出！; exit 1; } | sh -s   请悉知：maven编译成功！
+    
 }
 
 # 复制jar包
@@ -63,14 +64,19 @@ copy_code(){
     do
         if [ $select == "1" ];then
             cp ./$i /www/p-java-common-uat/
+	    echo '$i复制成功'
         elif [ $select == "3" ];then
             cp ./$i /www/p-java-common-test/
+            echo '$i复制成功'
         else
+            echo
+            echo
+	    echo '############jar包复制失败############'
             $dingding | sh -s 复制jar包失败！
         fi
         
-    done || {  $dingding |sh -s 请注意：jar包复制失败，程序退出！; exit 1; }
-    $dingding |sh -s   请悉知：maven编译成功！
+    done || { echo 'jar包复制失败'; $dingding |sh -s 请注意：jar包复制失败，程序退出！; exit 1; }
+    $dingding |sh -s   请悉知：jar包复制成功！
 }
 
 # 主函数
