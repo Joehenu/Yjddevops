@@ -64,10 +64,10 @@ copy_code(){
     do
         if [ $select == "1" ];then
             cp ./$i /www/p-java-common-uat/
-	    echo '$i复制成功'
+	    echo "$i复制成功"
         elif [ $select == "3" ];then
             cp ./$i /www/p-java-common-test/
-            echo '$i复制成功'
+            echo "$i复制成功"
         else
             echo
             echo
